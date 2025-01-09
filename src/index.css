@@ -1,12 +1,12 @@
 @font-face {
-  font-family: 'Roboto Regular';
+  font-family: 'Roboto Regular', sans-serif;
   src: url('../src/fonts/Roboto-Regular.ttf');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Roboto Medium';
+  font-family: 'Roboto Medium', sans-serif;
   src: url('../src/fonts/Roboto-Medium.ttf');
   font-weight: 500;
   font-style: normal;
@@ -14,13 +14,13 @@
 }
 
 @font-face {
-  font-family: 'Roboto Italic';
+  font-family: 'Roboto Italic', sans-serif;
   src: url('../src/fonts/Roboto-Italic.ttf');
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Roboto Bold';
+  font-family: 'Roboto Bold', sans-serif;
   src: url('../src/fonts/Roboto-Bold.ttf');
   font-weight: 700;
   font-style: normal;
@@ -28,25 +28,32 @@
 }
 
 :root {
-  font-family: 'Roboto Regular';
+  font-family: 'Roboto Regular', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: #121417;
-  background-color: #eeeeee;
+  background: #f8f8f8;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+a,
+h1,
+h2,
+h3,
+p {
+  padding: 0;
+  margin: 0;
+}
 
 a {
-  font-family: 'Roboto Italic';
-  font-weight: 700;
   color: #121417;
   text-decoration: inherit;
+  cursor: pointer;
 }
 a:hover {
   color: #121417;
@@ -82,12 +89,12 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #121417;
-    background-color: #eeeeee;
+    background: #f8f8f8;
   }
   a:hover {
     color: #121417;
   }
   button {
-    background-color: #eeeeee;
+    background: #f8f8f8;
   }
 }

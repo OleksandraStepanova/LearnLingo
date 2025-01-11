@@ -10,3 +10,25 @@
   line-height: 1.25;
   color: #fff;
 }
+.container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.link {
+  font-family: 'Roboto Bold', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #121417;
+}
+.wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.icon {
+  stroke-width: 2px;
+  stroke: #f4c550;
+}

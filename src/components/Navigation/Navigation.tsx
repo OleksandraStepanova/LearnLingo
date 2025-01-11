@@ -1,13 +1,14 @@
 import { NavLink } from 'react-router-dom';
+import css from './Navigation.module.css';
 
 export default function Navigation() {
   return (
     <nav>
       <NavLink to="/">
-        <button>Home</button>
+        <button className={css.link}>Home</button>
       </NavLink>
       <NavLink to="/teachers">
-        <button>Teachers</button>
+        <button className={css.link}>Teachers</button>
       </NavLink>
     </nav>
   );

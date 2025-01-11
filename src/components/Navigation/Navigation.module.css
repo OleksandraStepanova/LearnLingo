@@ -1,0 +1,7 @@
+.link:focus {
+  outline-color: #ffdc86;
+}
+.link:hover {
+  border: 1px solid #ffdc86;
+  outline-color: #ffdc86;
+}

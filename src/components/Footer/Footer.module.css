@@ -1,0 +1,33 @@
+.list {
+  display: flex;
+  justify-content: space-between;
+}
+.item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.container {
+  margin-top: 24px;
+  padding: 40px 123px;
+  border: 1.5px dashed #9fbaae;
+  border-radius: 30px;
+}
+.text {
+  width: 96px;
+  text-align: left;
+  font-family: 'Roboto Regular', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  color: rgba(18, 20, 23, 0.7);
+}
+.number {
+  font-family: 'Roboto Medium', sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: #121417;
+}

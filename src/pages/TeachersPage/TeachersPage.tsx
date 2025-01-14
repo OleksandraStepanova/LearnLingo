@@ -3,6 +3,8 @@ import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 import image1x from '../../img/teachers/janesmith.png';
 import image2x from '../../img/teachers/janesmith@2x.png';
 import css from './TeachersPage.module.css';
+import { LuBookOpen } from 'react-icons/lu';
+import { BsStarFill } from 'react-icons/bs';
 
 export default function TeachersPage() {
   return (
@@ -21,16 +23,18 @@ export default function TeachersPage() {
                 <div className={css.wrapper}>
                   <ul className={css.table}>
                     <li>
+                      <LuBookOpen />
                       <p>Lessons online</p>
                     </li>
                     <li>
-                      <p>Lessons done:1098</p>
+                      <p>Lessons done: 1098</p>
                     </li>
                     <li>
-                      <p>Rating:4.8</p>
+                      <BsStarFill color=" #ffc531" />
+                      <p>Rating: 4.8</p>
                     </li>
                     <li>
-                      <p>Price / 1 hour:30$</p>
+                      <p>Price / 1 hour: <span>30$</span></p>
                     </li>
                   </ul>
                   <button>+</button>

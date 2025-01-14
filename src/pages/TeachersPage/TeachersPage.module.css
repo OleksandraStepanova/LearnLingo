@@ -49,6 +49,7 @@
 .table li {
   display: flex;
   align-items: center;
+  gap: 8px;
   border-right: 1px solid rgba(18, 20, 23, 0.2);
   padding-right: 16px;
   padding-left: 16px;
@@ -60,4 +61,7 @@
 }
 .table li:last-child {
   border-right: none;
+}
+.table li span {
+  color: #38cd3e;
 }

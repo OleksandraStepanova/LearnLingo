@@ -1,6 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import css from './HomePage.module.css';
 import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
+import image1x from '../../img/home.png';
+import image2x from '../../img/home@2x.png';
+import Footer from '../../components/Footer/Footer';
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -10,8 +13,8 @@ export default function HomePage() {
   };
 
   return (
-    <section>
-      <div className={css.container}>
+    <main>
+      <section className={css.container}>
         <div className={css.wrapper}>
           <h1 className={css.title}>
             Unlock your potential with the best{' '}
@@ -27,9 +30,10 @@ export default function HomePage() {
           </a>
         </div>
         <div>
-          <ResponsiveImage />
+          <ResponsiveImage image1x={image1x} image2x={image2x} size={568} />
         </div>
-      </div>
-    </section>
+      </section>
+      <Footer />
+    </main>
   );
 }

@@ -1,13 +1,20 @@
-import image1x from '../../img/home.png';
-import image2x from '../../img/home@2x.png';
+interface ResponsiveImageProps {
+  image1x: string;
+  image2x: string;
+  size: number;
+}
 
-export default function ResponsiveImage() {
+export default function ResponsiveImage({
+  image1x,
+  image2x,
+  size,
+}: ResponsiveImageProps) {
   return (
     <img
       src={image1x}
       srcSet={image2x}
       alt="hero image"
-      style={{ width: '568px' }}
+      style={{ width: size }}
     />
   );
 }

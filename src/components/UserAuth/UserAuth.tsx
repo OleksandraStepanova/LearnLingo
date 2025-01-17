@@ -1,26 +1,32 @@
-import { NavLink } from 'react-router-dom';
-import css from './UserAuth.module.css';
-import { CiLogin } from 'react-icons/ci';
 import { useState } from 'react';
 import Modal from '../Modal/Modal';
 import RegistrationForm from '../RegistrationForm/RegistrationForm';
+import LoginForm from '../LoginForm/LoginForm';
+import { CiLogin } from 'react-icons/ci';
+import css from './UserAuth.module.css';
+
 
 const UserAuth: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [isModalOpenSignin, setIsModalOpenSignin] = useState<boolean>(false);
+  const [isModalOpenLogin, setIsModalOpenLogin] = useState<boolean>(false);
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const openModalSignin = () => setIsModalOpenSignin(true);
+  const closeModalSignin = () => setIsModalOpenSignin(false);
+
+  const openModalLogin = () => setIsModalOpenLogin(true);
+  const closeModalLogin = () => setIsModalOpenLogin(false);
 
   return (
     <div className={css.container}>
-      <NavLink className={css.wrapper} to="/login">
+      <div className={css.wrapper} >
         <CiLogin className={css.icon} />
-        <p className={css.link}>Log In</p>
-      </NavLink>
-      <button className={css.button} onClick={openModal}>
+        <button className={css.link} onClick={openModalLogin}>Log In</button>
+      </div>
+      <button className={css.button} onClick={openModalSignin}>
         Registration
       </button>
-      {isModalOpen && <Modal onClose={closeModal} children={<RegistrationForm onClose={closeModal}/> } />}
+      {isModalOpenSignin && <Modal onClose={closeModalSignin} children={<RegistrationForm onClose={closeModalSignin} />} />}
+      {isModalOpenLogin && <Modal onClose={closeModalLogin} children={<LoginForm onClose={closeModalLogin}/>} />}
     </div>
   );
 };

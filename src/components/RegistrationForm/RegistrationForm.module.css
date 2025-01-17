@@ -9,7 +9,7 @@
 }
 
 .text {
-    font-family: 'Roboto Regular';
+    font-family: 'Roboto Regular',sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 137%;
@@ -59,4 +59,9 @@
     width: 438px;
     height: 60px;
     background: #f4c550;
+}
+
+.form button:hover,.form button:focus,.form button:active {
+    border: 1px solid #f4c550;
+    outline-color: #f4c550;
 }

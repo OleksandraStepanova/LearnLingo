@@ -33,11 +33,9 @@ const RegistrationForm = ({ onClose }: RegistrationModal) => {
       };
   return (
     <div className={css.wrapper}>
-          <h2 className={css.title}>Registration</h2>
+          <h2 className={css.title}>Log In</h2>
           <p className={css.text}>
-            Thank you for your interest in our platform! In order to register,
-            we need some information. Please provide us with the following
-            information
+            Welcome back! Please enter your credentials to access your account and continue your search for an teacher.
           </p>
           <Formik initialValues={initialValues}
       validationSchema={validationSchema}

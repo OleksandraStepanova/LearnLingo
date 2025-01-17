@@ -20,7 +20,7 @@ const UserAuth: React.FC = () => {
     <div className={css.container}>
       <div className={css.wrapper} >
         <CiLogin className={css.icon} />
-        <button className={css.link} onClick={openModalLogin}>Log In</button>
+        <a className={css.link} onClick={openModalLogin}>Log In</a>
       </div>
       <button className={css.button} onClick={openModalSignin}>
         Registration

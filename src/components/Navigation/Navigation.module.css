@@ -1,7 +1,21 @@
-.link:focus {
-  outline-color: #ffdc86;
+.container{
+  display: flex;
+  gap: 28px;
+  align-items: center;
 }
-.link:hover {
-  border: 1px solid #ffdc86;
-  outline-color: #ffdc86;
+
+.active{
+color: #f4c550;
+font-family: 'Roboto Regular', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
 }
+a{
+color: #121417;
+font-family: 'Roboto Regular', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+}
+

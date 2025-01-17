@@ -10,6 +10,12 @@
   line-height: 1.25;
   color: #fff;
 }
+
+.button:hover, .button:focus, .button:active{
+  border: 1px solid black;
+    outline-color: black;
+    color: #f4c550;
+}
 .container {
   display: flex;
   gap: 16px;
@@ -21,8 +27,13 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 1.25;
-  color: #121417;
+  color: #121417;  
 }
+
+.link:hover{
+  color: #f4c550;
+}
+
 .wrapper {
   display: flex;
   gap: 8px;

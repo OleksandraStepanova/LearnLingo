@@ -17,10 +17,11 @@
   text-align: left;
   border-radius: 30px;
   width: 565px;
-  height: 599px;
+  position: relative;
 }
 
 .closeButton {
+  position: absolute;
   background: none;
   border: none;
   font-size: 20px;
@@ -50,4 +51,42 @@
 
 .wrapper {
   width: 438px;
+}
+
+.form{
+  margin-top: 40px;
+}
+.wrapperForm{
+  display: flex;
+  flex-direction: column;
+  gap:18px
+}
+.input{
+  
+  border: 1px solid rgba(18, 20, 23, 0.1);
+    border-radius: 12px;
+    padding: 16px 18px;
+    width: 438px;
+    height: 54px;
+}
+.input::placeholder{
+  font-family: 'Roboto Regular',sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.37;
+    color: #121417;
+}
+
+.form button{
+  font-family: 'Roboto Italic', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.56;
+    color: #121417;
+    margin-top: 40px;
+    border-radius: 12px;
+    padding: 16px;
+    width: 438px;
+    height: 60px;
+    background: #f4c550;
 }

@@ -1,5 +1,6 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from "yup";
+import { IoMdClose } from "react-icons/io";
 import css from './RegistrationModal.module.css';
 
 interface RegistrationModal {
@@ -34,7 +35,8 @@ export default function RegistrationModal({ onClose }: RegistrationModal) {
 
 const handleSubmit = (values: RegistrationFormValues) => {
     console.log('Form data:', values);
-    alert('Registration successful!');
+  alert('Registration successful!');
+  onClose();
   };
 
 
@@ -42,7 +44,7 @@ const handleSubmit = (values: RegistrationFormValues) => {
     <div className={css.overlay}>
       <div className={css.modal}>
         <button className={css.closeButton} onClick={onClose}>
-          ×
+          <IoMdClose size={32}/>
         </button>
         <div className={css.wrapper}>
           <h2 className={css.title}>Registration</h2>
@@ -55,18 +57,20 @@ const handleSubmit = (values: RegistrationFormValues) => {
       validationSchema={validationSchema}
       onSubmit={handleSubmit}>
             {() => (
-              <Form>
-                <div>
-                  <Field type='text' name='name' placeholder='Name' />
-                  <ErrorMessage name="name" component="div" className="error" />
-                </div>
-                <div>
-                  <Field type='text' name='email' placeholder='Email' />
-                  <ErrorMessage name="email" component="div" className="error" />
-                </div>
-                <div>
-                  <Field type='text' name='password' placeholder='Password' />
-                  <ErrorMessage name="password" component="div" className="error" />
+              <Form className={css.form}>
+                <div className={css.wrapperForm}>
+                  <div>
+                    <Field type='text' name='name' placeholder='Name' className={css.input} />
+                    <ErrorMessage name="name" component="div" className="error" />
+                  </div>
+                  <div>
+                    <Field type='text' name='email' placeholder='Email' className={css.input} />
+                    <ErrorMessage name="email" component="div" className="error" />
+                  </div>
+                  <div>
+                    <Field type='text' name='password' placeholder='Password' className={css.input} />
+                    <ErrorMessage name="password" component="div" className="error" />
+                  </div>
                 </div>
                 <button type='submit'>Sign Up</button>
               </Form>

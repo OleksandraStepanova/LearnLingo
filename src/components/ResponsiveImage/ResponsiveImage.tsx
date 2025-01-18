@@ -10,11 +10,13 @@ export default function ResponsiveImage({
   size,
 }: ResponsiveImageProps) {
   return (
-    <img
-      src={image1x}
-      srcSet={image2x}
-      alt="hero image"
-      style={{ width: size }}
-    />
+    <div>
+      <img
+        src={image1x}
+        srcSet={image2x}
+        alt="hero image"
+        style={{ width: size }}
+      />
+    </div>
   );
 }

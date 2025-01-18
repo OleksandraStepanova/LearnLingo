@@ -12,6 +12,13 @@
   align-items: start;
   background-color: #fff;
 }
+
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: start;
+}
 .info {
   display: flex;
   justify-content: space-between;
@@ -74,7 +81,6 @@
 }
 .text {
   text-align: left;
-  margin-top: 32px;
 }
 .textList {
   display: flex;
@@ -104,13 +110,12 @@
   color: #121417;
   padding: 0;
 }
-.heshtegs {
+.hashtags {
   display: flex;
   text-align: left;
   gap: 8px;
-  margin-top: 32px;
 }
-.heshtegs li {
+.hashtags li {
   border: 1px solid rgba(18, 20, 23, 0.2);
   border-radius: 35px;
   padding: 8px 12px;
@@ -123,4 +128,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.bookButton {
+  border-radius: 12px;
+  padding: 16px;
+  width: 232px;
+  height: 60px;
+  background: #f4c550;
+  font-family: 'Roboto Italic', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 156%;
+  color: #121417;
+}
+
+.bookButton:hover,
+.bookButton:active,
+.bookButton:focus {
+  border: 0 solid #f4c550;
+  outline: #f4c550;
+  background: #ffdc86;
 }

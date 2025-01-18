@@ -5,14 +5,20 @@ import css from './TeachersList.module.css';
 import { LuBookOpen } from 'react-icons/lu';
 import { BsStarFill } from 'react-icons/bs';
 import { CiHeart } from 'react-icons/ci';
+import { useState } from 'react';
+import TeachersReviews from '../TeachersReviews/TeachersReviews';
 
-export default function TeachersList() {
+const TeachersList: React.FC = () => {
+  const [isReadMore, seIsReadMore] = useState<boolean>(false);
+
+  const openMore = () => seIsReadMore(true);
+
   return (
     <ul className={css.list}>
       <li>
         <div className={css.card}>
           <ResponsiveImage image1x={image1x} image2x={image2x} size={120} />
-          <div>
+          <div className={css.cardWrapper}>
             <div className={css.info}>
               <div className={css.name}>
                 <p>Languages</p>
@@ -68,19 +74,30 @@ export default function TeachersList() {
                   </p>
                 </li>
               </ul>
-              <button>Read more</button>
+              {isReadMore ? (
+                <TeachersReviews />
+              ) : (
+                <button onClick={openMore}>Read more</button>
+              )}
             </div>
+
             <div>
-              <ul className={css.heshtegs}>
+              <ul className={css.hashtags}>
                 <li>#A1 Beginner</li>
                 <li>#A2 Elementary</li>
                 <li>#B1 Intermediate</li>
                 <li>#B2 Upper-Intermediate</li>
               </ul>
             </div>
+
+            {isReadMore && (
+              <button className={css.bookButton}>Book trial lesson</button>
+            )}
           </div>
         </div>
       </li>
     </ul>
   );
-}
+};
+
+export default TeachersList;

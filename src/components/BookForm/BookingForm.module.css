@@ -70,3 +70,44 @@
 .error {
   color: red;
 }
+.avatar {
+  margin-top: 20px;
+  display: flex;
+  gap: 14px;
+  font-family: 'Roboto Medium';
+  font-weight: 500;
+}
+.avatar div p {
+  font-size: 12px;
+  line-height: 1.33;
+  color: #8a8a89;
+}
+
+.avatar div h2 {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #121417;
+}
+
+.titleCheckbox {
+  font-family: 'Roboto Medium';
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.33;
+  color: #121417;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.radioButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-direction: column;
+  gap: 16px;
+  font-family: 'Roboto Regular', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.37;
+  text-align: center;
+  color: #121417;
+}

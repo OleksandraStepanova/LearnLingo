@@ -1,45 +1,46 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
-import css from './RegistrationForm.module.css';
+import css from './BookingForm.module.css';
 
-interface RegistrationFormProps {
+interface BookingFormProps {
   onClose: () => void;
 }
 
-interface RegistrationFormValues {
-  name: string;
+interface BookingFormValues {
+  fullName: string;
   email: string;
-  password: string;
+  phone: string;
 }
 
-const RegistrationForm = ({ onClose }: RegistrationFormProps) => {
-  const initialValues: RegistrationFormValues = {
-    name: '',
+const BookingForm = ({ onClose }: BookingFormProps) => {
+  const initialValues: BookingFormValues = {
+    fullName: '',
     email: '',
-    password: '',
+    phone: '',
   };
 
   const validationSchema = Yup.object({
-    name: Yup.string()
-      .required('Name is required')
+    fullName: Yup.string()
+      .required('Full name is required')
       .min(2, 'The name must contain at least 2 characters'),
     email: Yup.string().email('Incorrect email').required('Email required'),
-    password: Yup.string()
-      .required('Password required')
-      .min(6, 'Password must contain at least 6 characters'),
+    phone: Yup.string()
+      .required('Phone number required')
+      .min(11, 'Phone number must contain at least 11 characters'),
   });
 
-  const handleSubmit = (values: RegistrationFormValues) => {
+  const handleSubmit = (values: BookingFormValues) => {
     console.log('Form data:', values);
-    alert('Registration successful!');
+    alert('Booking successful!');
     onClose();
   };
+
   return (
     <div className={css.wrapper}>
-      <h2 className={css.title}>Registration</h2>
+      <h2 className={css.title}>Book trial lesson</h2>
       <p className={css.text}>
-        Thank you for your interest in our platform! In order to register, we
-        need some information. Please provide us with the following information
+        Our experienced tutor will assess your current language level, discuss
+        your learning goals, and tailor the lesson to your specific needs.
       </p>
       <Formik
         initialValues={initialValues}
@@ -52,32 +53,40 @@ const RegistrationForm = ({ onClose }: RegistrationFormProps) => {
               <div>
                 <Field
                   type="text"
-                  name="name"
-                  placeholder="Name"
+                  name="fullName"
+                  placeholder="Full Name"
                   className={css.input}
                 />
-                <ErrorMessage name="name" component="div" className="error" />
+                <ErrorMessage
+                  name="fullName"
+                  component="div"
+                  className={css.error}
+                />
               </div>
               <div>
                 <Field
-                  type="text"
+                  type="email"
                   name="email"
                   placeholder="Email"
                   className={css.input}
                 />
-                <ErrorMessage name="email" component="div" className="error" />
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className={css.error}
+                />
               </div>
               <div>
                 <Field
                   type="text"
-                  name="password"
-                  placeholder="Password"
+                  name="phone"
+                  placeholder="Phone number"
                   className={css.input}
                 />
                 <ErrorMessage
-                  name="password"
+                  name="phone"
                   component="div"
-                  className="error"
+                  className={css.error}
                 />
               </div>
             </div>
@@ -89,4 +98,4 @@ const RegistrationForm = ({ onClose }: RegistrationFormProps) => {
   );
 };
 
-export default RegistrationForm;
+export default BookingForm;

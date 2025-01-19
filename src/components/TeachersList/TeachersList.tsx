@@ -7,11 +7,16 @@ import { BsStarFill } from 'react-icons/bs';
 import { CiHeart } from 'react-icons/ci';
 import { useState } from 'react';
 import TeachersReviews from '../TeachersReviews/TeachersReviews';
+import BookingForm from '../BookForm/BookingForm';
+import Modal from '../Modal/Modal';
 
 const TeachersList: React.FC = () => {
   const [isReadMore, seIsReadMore] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const openMore = () => seIsReadMore(true);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <ul className={css.list}>
@@ -91,7 +96,16 @@ const TeachersList: React.FC = () => {
             </div>
 
             {isReadMore && (
-              <button className={css.bookButton}>Book trial lesson</button>
+              <button className={css.bookButton} onClick={openModal}>
+                Book trial lesson
+              </button>
+            )}
+
+            {isModalOpen && (
+              <Modal
+                onClose={closeModal}
+                children={<BookingForm onClose={closeModal} />}
+              />
             )}
           </div>
         </div>

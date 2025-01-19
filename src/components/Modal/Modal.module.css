@@ -1,32 +1,53 @@
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
 }
 
 .modal {
-    background: #fff;
-    padding: 64px;
-    text-align: left;
-    border-radius: 30px;
-    width: 565px;
-    position: relative;
+  background: #fff;
+  padding: 64px;
+  text-align: left;
+  border-radius: 30px;
+  width: 565px;
+  position: relative;
+  max-height: 98vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  z-index: 1001;
+}
+.modal::-webkit-scrollbar {
+  width: 4px;
+}
+.modal::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .closeButton {
-    position: absolute;
-    background: none;
-    border: none;
-    font-size: 20px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
+  position: absolute;
+  background: none;
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }

@@ -7,6 +7,7 @@ import image2x from '../../img/teachers/janesmith@2x.png';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import { styled } from '@mui/system';
 
 interface BookingFormProps {
   onClose: () => void;
@@ -35,7 +36,7 @@ const BookingForm = ({ onClose }: BookingFormProps) => {
     phone: Yup.string()
       .required('Phone number required')
       .min(11, 'Phone number must contain at least 11 characters'),
-    reason: Yup.string().required('Please select a reason'),
+    reasons: Yup.string().required('Please select a reason'),
   });
 
   const handleSubmit = (values: BookingFormValues) => {
@@ -43,6 +44,12 @@ const BookingForm = ({ onClose }: BookingFormProps) => {
     alert('Booking successful!');
     onClose();
   };
+
+  const CustomRadio = styled(Radio)({
+    '&.Mui-checked': {
+      color: '#F4C550',
+    },
+  });
 
   return (
     <div className={css.wrapper}>
@@ -63,7 +70,7 @@ const BookingForm = ({ onClose }: BookingFormProps) => {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {() => (
+        {({ values, setFieldValue }) => (
           <Form className={css.form}>
             <div className={css.wrapperForm}>
               <div className={css.radioButtons}>
@@ -71,76 +78,44 @@ const BookingForm = ({ onClose }: BookingFormProps) => {
                   {' '}
                   What is your main reason for learning English?
                 </p>
-                
-
-                <div className={css.radioWrapper}>
-                  <Field
-                    type="radio"
-                    name="reason"
-                    value="Career and business"
-                    className={css.radio}
-                    id="career"
-                  />
-                  <label htmlFor="career">
-                    <span className={css.radioLabel}></span>
-                    Career and business
-                  </label>
-                </div>
-                <div className={css.radioWrapper}>
-                  <Field
-                    type="radio"
-                    name="reason"
-                    value="Lesson for kids"
-                    className={css.radio}
-                    id="lesson"
-                  />
-                  <label htmlFor="lesson">
-                    <span className={css.radioLabel}></span>
-                    Lesson for kids
-                  </label>
-                </div>
-
-                <div className={css.radioWrapper}>
-                  <Field
-                    type="radio"
-                    name="reason"
-                    value="Living abroad"
-                    className={css.radio}
-                    id="abroad"
-                  />
-                  <label htmlFor="abroad">
-                    <span className={css.radioLabel}></span>
-                    Living abroad
-                  </label>
-                </div>
-
-                <div className={css.radioWrapper}>
-                  <Field
-                    type="radio"
-                    name="reason"
-                    value="Exams and coursework"
-                    className={css.radio}
-                    id="exams"
-                  />
-                  <label htmlFor="exams">
-                    <span className={css.radioLabel}></span>
-                    Exams and coursework
-                  </label>
-                </div>
-
-                <div className={css.radioWrapper}>
-                  <Field
-                    type="radio"
-                    name="reason"
-                    value="Culture, travel or hobby"
-                    className={css.radio}
-                    id="hobby"
-                  />
-                  <label htmlFor="hobby">
-                    <span className={css.radioLabel}></span>
-                    Culture, travel or hobby
-                  </label>
-                </div>
+                <Field name="reason">
+                  {({ field }: { field: { value: string } }) => (
+                    <RadioGroup
+                      className={css.radioButtons}
+                      {...field}
+                      row
+                      value={values.reasons}
+                      onChange={e => setFieldValue('reasons', e.target.value)}
+                      style={{ display: 'flex', flexDirection: 'column' }}
+                    >
+                      <FormControlLabel
+                        value="Career and business"
+                        control={<CustomRadio />}
+                        label="Career and business"
+                      />
+                      <FormControlLabel
+                        value="Lesson for kids"
+                        control={<CustomRadio />}
+                        label="Lesson for kids"
+                      />
+                      <FormControlLabel
+                        value="Living abroad"
+                        control={<CustomRadio />}
+                        label="Living abroad"
+                      />
+                      <FormControlLabel
+                        value="Exams and coursework"
+                        control={<CustomRadio />}
+                        label="Exams and coursework"
+                      />
+                      <FormControlLabel
+                        value="Culture, travel or hobby"
+                        control={<CustomRadio />}
+                        label="Culture, travel or hobby"
+                      />
+                    </RadioGroup>
+                  )}
+                </Field>
                 <ErrorMessage
                   name="reason"
                   component="div"
